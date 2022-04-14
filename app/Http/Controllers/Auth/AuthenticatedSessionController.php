@@ -30,9 +30,19 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        if (Auth::user()->hasRole('user')) {
+            $request->session()->regenerate();
+            return "You are logged in as a user";
+        } elseif (Auth::user()->hasRole('admin')) {
+            $request->session()->regenerate();
+            return "You are logged in as an admin";
+        } else {
+            return "You are logged in as a guest";
+        }
+        // dd(Auth::user()->hasRole('user'));
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+
+        // return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**

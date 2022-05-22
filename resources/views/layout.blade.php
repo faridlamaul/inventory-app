@@ -13,6 +13,8 @@
 
     <title>Inventory-App</title>
 
+    <link rel="stylesheet" href="{{ URL::asset('css/editgui.css'); }} ">
+
 </head>
 <body>
     <x-navbar />

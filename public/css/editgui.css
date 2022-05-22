@@ -1,0 +1,8 @@
+.uk-subnav-pill li a {
+    color: black !important;
+}
+
+.uk-subnav-pill .uk-active a {
+    background-color: black;
+    color: white !important;
+}

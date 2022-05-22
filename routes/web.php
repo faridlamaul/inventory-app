@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PeminjamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/barang', function () {
-    return view('peminjaman.barang');
-});
+Route::get('/barang', [PeminjamanController::class, 'index']);
+
+Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

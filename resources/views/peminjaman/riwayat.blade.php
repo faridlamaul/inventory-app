@@ -5,8 +5,8 @@
 <div class="bg-secondary" style="height: 200vh">
     <div class="container-fluid pt-4 px-4">
         <div class="mb-5 bg-dark px-4 py-3 rounded">
-            <h2 class="fw-bold text-white">Ajukan Peminjaman</h2>
-            <p class="text-white">Selamat data di page peminjaman barang</p>
+            <h2 class="fw-bold text-white">Riwayat Peminjaman</h2>
+            <p class="text-white">Selamat data di page riwayat peminjaman barang</p>
         </div>
         <div uk-filter="target: .js-filter">
 
@@ -47,12 +47,14 @@
                         <div class="uk-padding-large">
                             <h1>Bor Mesin</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <div>
+                            {{-- <div>
                                 {!! QrCode::size(300)->generate('borrrrrrrrrrrrrrr') !!}
+                            </div> --}}
+                            <div class="uk-margin-medium-top">
+                                <p>Waktu peminjaman :<span> Timestamp</span></p>
                             </div>
-                            <form action="">
+                            {{-- <form action="">
                                 <div class="uk-margin-small-top">
-                                    {{-- <label for="" class="uk-form-label">Masukkan hasil scan disini</label> --}}
                                     <div class="uk-form-controls">
                                         <input class="uk-input" type="text" placeholder="Masukkan hasil scan disini">
                                     </div>
@@ -60,7 +62,7 @@
                                 <div class="uk-margin">
                                     <button class="uk-button uk-button-primary" type="submit">Submit</button>
                                 </div>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>

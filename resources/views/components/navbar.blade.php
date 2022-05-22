@@ -12,35 +12,46 @@
                 </li>
                 {{-- Auth user --}}
                 <li class="ms-3">
-                    <a href="#">Ajukan Peminjaman</a>
-                    <div class="uk-navbar-dropdown bg-dark">
+                    <a href="{{ url('/barang') }}">
+                        Ajukan Peminjaman
+                    </a>
+                    {{-- <div class="uk-navbar-dropdown bg-dark">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li><a href="{{ url('/barang') }}" class="fw-regular">Barang</a></li>
-                            <li><a href="#" class="fw-regular">Ruangan</a></li>
-                        </ul>
-                    </div>
-                </li>
-
+                <li><a href="#" class="fw-regular">Ruangan</a></li>
             </ul>
+        </div> --}}
+        </li>
+        <li>
+            <a href="{{ url('riwayat') }}">
+                Riwayat peminjaman
+            </a>
+        </li>
 
-        </div>
-        <div class="uk-navbar-right">
-            {{-- guest user --}}
-            <ul class="uk-navbar-nav">
-                <li class="mx-2" style="align-self: center">
-                    <button class="uk-button uk-button-secondary bg-white text-dark">Login</button>
-                </li>
-                <li class="ms-2" style="align-self: center">
-                    <button class="uk-button uk-button-default text-white">Register</button>
-                </li>
-            </ul>
+        </ul>
 
-            {{-- Auth user --}}
-            <ul class="uk-navbar-nav">
-                <li class="ms-2" style="align-self: center">
-                    <button class="uk-button uk-button-default text-white">Logout</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+</div>
+<div class="uk-navbar-right">
+    {{-- guest user --}}
+    <ul class="uk-navbar-nav">
+        <li class="mx-2" style="align-self: center">
+            <a href="{{ url('login') }}">
+                <button class="uk-button uk-button-secondary bg-white text-dark">Login</button>
+            </a>
+        </li>
+        <li class="ms-2" style="align-self: center">
+            <a href="{{ url('register') }}">
+                <button class="uk-button uk-button-default text-white">Register</button>
+            </a>
+        </li>
+    </ul>
+
+    {{-- Auth user --}}
+    <ul class="uk-navbar-nav">
+        <li class="ms-2" style="align-self: center">
+            <button class="uk-button uk-button-default text-white">Logout</button>
+        </li>
+    </ul>
+</div>
+</nav>
 </div>

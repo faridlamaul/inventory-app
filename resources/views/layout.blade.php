@@ -19,7 +19,7 @@
 <body>
     <x-navbar />
     @yield('content')
-    <x-Footer />
+    <x-footer />
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

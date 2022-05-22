@@ -15,7 +15,7 @@ use App\Http\Controllers\PeminjamanController;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('Homepage');
 });
 
 Route::get('/barang', [PeminjamanController::class, 'index']);

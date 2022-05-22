@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+                    Welcome to your dashboard!
+                    You're logged in as <span class="font-bold">{{ Auth::user()->roles->pluck('name')[0] }}</span>
                 </div>
             </div>
         </div>

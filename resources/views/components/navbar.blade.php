@@ -21,37 +21,45 @@
                 <li><a href="#" class="fw-regular">Ruangan</a></li>
             </ul>
         </div> --}}
-        </li>
-        <li>
-            <a href="{{ url('riwayat') }}">
-                Riwayat peminjaman
-            </a>
-        </li>
+                </li>
+                <li>
+                    <a href="{{ url('riwayat') }}">
+                        Riwayat peminjaman
+                    </a>
+                </li>
 
-        </ul>
+            </ul>
 
-</div>
-<div class="uk-navbar-right">
-    {{-- guest user --}}
-    <ul class="uk-navbar-nav">
-        <li class="mx-2" style="align-self: center">
-            <a href="{{ url('login') }}">
-                <button class="uk-button uk-button-secondary bg-white text-dark">Login</button>
-            </a>
-        </li>
-        <li class="ms-2" style="align-self: center">
-            <a href="{{ url('register') }}">
-                <button class="uk-button uk-button-default text-white">Register</button>
-            </a>
-        </li>
-    </ul>
+        </div>
+        <div class="uk-navbar-right">
+            {{-- guest user --}}
+            @guest
+                <ul class="uk-navbar-nav">
+                    <li class="mx-2" style="align-self: center">
+                        <a href="{{ url('login') }}">
+                            <button class="uk-button uk-button-secondary bg-white text-dark">Login</button>
+                        </a>
+                    </li>
+                    <li class="ms-2" style="align-self: center">
+                        <a href="{{ url('register') }}">
+                            <button class="uk-button uk-button-default text-white">Register</button>
+                        </a>
+                    </li>
+                </ul>
+            @endguest
 
-    {{-- Auth user --}}
-    <ul class="uk-navbar-nav">
-        <li class="ms-2" style="align-self: center">
-            <button class="uk-button uk-button-default text-white">Logout</button>
-        </li>
-    </ul>
-</div>
-</nav>
+            {{-- auth user --}}
+            @auth
+                <ul class="uk-navbar-nav">
+                    <li class="ms-2" style="align-self: center">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+
+                            <button class="uk-button uk-button-default text-white">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            @endauth
+        </div>
+    </nav>
 </div>

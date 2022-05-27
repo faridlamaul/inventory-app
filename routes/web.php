@@ -22,8 +22,8 @@ Route::get('/barang', [PeminjamanController::class, 'index']);
 
 Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

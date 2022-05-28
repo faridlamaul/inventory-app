@@ -10,28 +10,27 @@
                         </h3>
                     </a>
                 </li>
-                {{-- Auth user --}}
-                <li class="ms-3">
-                    <a href="{{ url('/barang') }}">
-                        Ajukan Peminjaman
-                    </a>
-                    {{-- <div class="uk-navbar-dropdown bg-dark">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="{{ url('/barang') }}" class="fw-regular">Barang</a></li>
-                <li><a href="#" class="fw-regular">Ruangan</a></li>
-            </ul>
-        </div> --}}
-                </li>
-                <li>
-                    <a href="{{ url('riwayat') }}">
-                        Riwayat peminjaman
-                    </a>
-                </li>
 
+                {{-- Auth with role user --}}
+                @auth
+                    @if (Auth::user()->hasRole('user'))
+                        <li class="ms-3">
+                            <a href="{{ url('/barang') }}">
+                                Ajukan Peminjaman
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('riwayat') }}">
+                                Riwayat peminjaman
+                            </a>
+                        </li>
+                    @endif
+                @endauth
             </ul>
 
         </div>
         <div class="uk-navbar-right">
+
             {{-- guest user --}}
             @guest
                 <ul class="uk-navbar-nav">

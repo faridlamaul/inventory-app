@@ -18,12 +18,10 @@ Route::get('/', function () {
     return view('Homepage');
 });
 
-Route::get('/barang', [PeminjamanController::class, 'index']);
-
-Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+// Middleware for role 'user' 
+Route::group(['middleware' => ['role:user']], function () {
+    Route::get('/barang', [PeminjamanController::class, 'index']);
+    Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
+});
 
 require __DIR__ . '/auth.php';

@@ -6,7 +6,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="mb-5 bg-dark px-4 py-3 rounded">
             <h2 class="fw-bold text-white">Riwayat Peminjaman</h2>
-            <p class="text-white">Selamat data di page riwayat peminjaman barang</p>
+            <p class="text-white">Selamat datang di page riwayat peminjaman barang</p>
         </div>
         <div uk-filter="target: .js-filter">
 

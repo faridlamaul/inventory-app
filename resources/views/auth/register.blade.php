@@ -14,33 +14,95 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+            <div class="flex flex-row justify-between" style="place-content: center">
+                <div class="mx-2">
+                    <!-- Nama -->
+                    <div>
+                        <x-label for="nama" :value="__('Nama')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                        <x-input id="nama" class="block mt-1 w-full" type="text" nama="nama" :value="old('nama')" required autofocus />
+                    </div>
+
+                    <!-- nik -->
+                    <div class="mt-4">
+                        <x-label for="nik" :value="__('Nik')" />
+
+                        <x-input id="nik" class="block mt-1 w-full" type="text" nik="nik" :value="old('nik')" required autofocus />
+                    </div>
+
+                    <!-- alamat -->
+                    <div class="mt-4">
+                        <x-label for="alamat" :value="__('Alamat')" />
+
+                        <x-input id="alamat" class="block mt-1 w-full" type="text" alamat="alamat" :value="old('alamat')" required autofocus />
+                    </div>
+
+                    <!-- telepon -->
+                    <div class="mt-4">
+                        <x-label for="telepon" :value="__('Telepon')" />
+
+                        <x-input id="telepon" class="block mt-1 w-full" type="text" telepon="telepon" :value="old('telepon')" required autofocus />
+                    </div>
+                </div>
+                <div class="mx-2">
+                    <!-- Kompartemen -->
+                    <div class="">
+                        <x-label for="Kompartemen" :value="__('Kompartemen')" class="mb-1" />
+                        <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <!-- Departemen -->
+                    <div class="mt-4">
+                        <x-label for="Departemen" :value="__('Departemen')" class="mb-1" />
+                        <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <!-- Unit Kerja -->
+                    <div class="mt-4">
+                        <x-label for="UnitKerja" :value="__('Unit Kerja')" class="mb-1" />
+                        <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="mx-2">
+                    <!-- Email Address -->
+                    <div class="">
+                        <x-label for="email" :value="__('Email')" />
+
+                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mt-4">
+                        <x-label for="password" :value="__('Password')" />
+
+                        <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mt-4">
+                        <x-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                        <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                    </div>
+                </div>
             </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
-            </div>
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

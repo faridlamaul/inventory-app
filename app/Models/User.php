@@ -22,6 +22,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'nik',
+        'kompartemen',
+        'departemen',
+        'unit_kerja',
+        'alamat',
+        'telepon',
+        'type',
     ];
 
     /**
@@ -42,4 +49,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class, 'transaksis');
+    }
 }

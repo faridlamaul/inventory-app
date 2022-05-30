@@ -16,12 +16,8 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('type');
             $table->integer('quantity');
-            $table->string('condition');
-            $table->string('description');
-            $table->string('qrcode');
-            $table->string('image');
-            $table->foreignId('type_id')->constrained('types');
             $table->timestamps();
         });
     }

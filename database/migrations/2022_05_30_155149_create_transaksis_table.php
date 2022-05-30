@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('quantity');
-            $table->string('condition');
-            $table->string('description');
-            $table->string('qrcode');
-            $table->string('image');
-            $table->foreignId('type_id')->constrained('types');
+        Schema::create('transaksis', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('item_id')->constrained('items');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->integer('type');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rooms');
+        Schema::dropIfExists('transaksis');
     }
 };

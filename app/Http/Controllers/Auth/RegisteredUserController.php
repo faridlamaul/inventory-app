@@ -38,12 +38,24 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'nik' => ['required', 'string', 'max:255'],
+            'alamat' => ['required', 'string', 'max:255'],
+            'telepon' => ['required', 'string', 'max:255'],
+            'kompartemen' => ['required', 'string', 'max:255'],
+            'departemen' => ['required', 'string', 'max:255'],
+            'unit_kerja' => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'nik' => $request->nik,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+            'kompartemen' => $request->kompartemen,
+            'departemen' => $request->departemen,
+            'unit_kerja' => $request->unit_kerja,
         ]);
 
         $role = Role::findByName('user');

@@ -20,35 +20,41 @@
                     <div>
                         <x-label for="nama" :value="__('Nama')" />
 
-                        <x-input id="nama" class="block mt-1 w-full" type="text" nama="nama" :value="old('nama')" required autofocus />
+                        <x-input id="nama" class="block mt-1 w-full" type="text" name="name" :value="old('nama')" required
+                            autofocus />
                     </div>
 
                     <!-- nik -->
                     <div class="mt-4">
                         <x-label for="nik" :value="__('Nik')" />
 
-                        <x-input id="nik" class="block mt-1 w-full" type="text" nik="nik" :value="old('nik')" required autofocus />
+                        <x-input id="nik" class="block mt-1 w-full" type="text" name="nik" :value="old('nik')" required
+                            autofocus />
                     </div>
 
                     <!-- alamat -->
                     <div class="mt-4">
                         <x-label for="alamat" :value="__('Alamat')" />
 
-                        <x-input id="alamat" class="block mt-1 w-full" type="text" alamat="alamat" :value="old('alamat')" required autofocus />
+                        <x-input id="alamat" class="block mt-1 w-full" type="text" name="alamat" :value="old('alamat')"
+                            required autofocus />
                     </div>
 
                     <!-- telepon -->
                     <div class="mt-4">
                         <x-label for="telepon" :value="__('Telepon')" />
 
-                        <x-input id="telepon" class="block mt-1 w-full" type="text" telepon="telepon" :value="old('telepon')" required autofocus />
+                        <x-input id="telepon" class="block mt-1 w-full" type="text" name="telepon" :value="old('telepon')"
+                            required autofocus />
                     </div>
                 </div>
                 <div class="mx-2">
                     <!-- Kompartemen -->
                     <div class="">
                         <x-label for="Kompartemen" :value="__('Kompartemen')" class="mb-1" />
-                        <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" aria-label="Default select example">
+                        <select id="kompartemen" name="kompartemen"
+                            class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -59,7 +65,9 @@
                     <!-- Departemen -->
                     <div class="mt-4">
                         <x-label for="Departemen" :value="__('Departemen')" class="mb-1" />
-                        <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" aria-label="Default select example">
+                        <select id="departemen" name="departemen"
+                            class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -70,7 +78,9 @@
                     <!-- Unit Kerja -->
                     <div class="mt-4">
                         <x-label for="UnitKerja" :value="__('Unit Kerja')" class="mb-1" />
-                        <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" aria-label="Default select example">
+                        <select id="unit_kerja" name="unit_kerja"
+                            class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -84,21 +94,24 @@
                     <div class="">
                         <x-label for="email" :value="__('Email')" />
 
-                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                            required />
                     </div>
 
                     <!-- Password -->
                     <div class="mt-4">
                         <x-label for="password" :value="__('Password')" />
 
-                        <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                        <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                            autocomplete="new-password" />
                     </div>
 
                     <!-- Confirm Password -->
                     <div class="mt-4">
                         <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                        <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                        <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                            name="password_confirmation" required />
                     </div>
                 </div>
             </div>

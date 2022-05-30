@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,12 @@ Route::get('/', function () {
 Route::group(['middleware' => ['role:user']], function () {
     Route::get('/barang', [PeminjamanController::class, 'index']);
     Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
+});
+
+// Middleware for role 'admin' 
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('/admin/user', [AdminController::class, 'index']);
+    Route::get('/admin/item', [AdminController::class, 'item']);
 });
 
 require __DIR__ . '/auth.php';

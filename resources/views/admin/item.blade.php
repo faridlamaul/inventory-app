@@ -5,8 +5,8 @@
 <div class="bg-secondary" style="height: 200vh">
     <div class="container-fluid pt-4 px-4">
         <div class="mb-5 bg-dark px-4 py-3 rounded">
-            <h2 class="fw-bold text-white">Ajukan Peminjaman</h2>
-            <p class="text-white">Selamat datang di page peminjaman barang</p>
+            <h2 class="fw-bold text-white">Manage Item</h2>
+            <p class="text-white">Selamat datang di page Manajemen Item</p>
         </div>
         <div uk-filter="target: .js-filter">
 

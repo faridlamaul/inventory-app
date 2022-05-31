@@ -17,17 +17,37 @@ class UserSeeder extends Seeder
     {
         $admin = User::create([
             'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('12345678'),
+            'email' => 'admin@petrokimia.com',
+            'password' => bcrypt('password'),
         ]);
         $admin->assignRole('admin');
 
         $user = User::create([
-            'name' => 'User',
-            'email' => 'user@user.com',
-            'password' => bcrypt('12345678'),
+            'email' => 'karyawan1@petrokimia.com',
+            'password' => bcrypt('password'),
+            'name' => 'Karyawan 1',
+            'nik' => '3511022501010004',
+            'kompartemen' => 'Kompartemen 1',
+            'departemen' => 'Departemen 1',
+            'unit_kerja' => 'Unit Kerja 1',
+            'alamat' => 'Alamat 1',
+            'telepon' => '082330943811',
+            'type' => 'Organik',
         ]);
+        $user->assignRole('user');
 
+        $user = User::create([
+            'email' => 'karyawan2@petrokimia.com',
+            'password' => bcrypt('password'),
+            'name' => 'Karyawan 2',
+            'nik' => '3511022403010004',
+            'kompartemen' => 'Kompartemen 1',
+            'departemen' => 'Departemen 2',
+            'unit_kerja' => 'Unit Kerja 2',
+            'alamat' => 'Alamat 2',
+            'telepon' => '082120934121',
+            'type' => 'Non Organik',
+        ]);
         $user->assignRole('user');
     }
 }

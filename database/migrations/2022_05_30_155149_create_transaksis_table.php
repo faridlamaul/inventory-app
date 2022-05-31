@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('item_id')->constrained('items');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
-            $table->integer('type');
+            $table->dateTime('start_date')->nullable();
+            $table->dateTime('end_date')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

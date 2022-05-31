@@ -28,6 +28,7 @@ Route::group(['middleware' => ['role:user']], function () {
 // Middleware for role 'admin' 
 Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/user', [AdminController::class, 'index']);
+    Route::delete('/admin/user/deleteUser/{id}', [AdminController::class, 'deleteUser']);
     Route::get('/admin/item', [AdminController::class, 'item']);
 });
 

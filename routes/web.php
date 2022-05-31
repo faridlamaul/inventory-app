@@ -30,6 +30,9 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/user', [AdminController::class, 'index']);
     Route::delete('/admin/user/deleteUser/{id}', [AdminController::class, 'deleteUser']);
     Route::get('/admin/item', [AdminController::class, 'item']);
+    Route::post('/admin/item/addItem', [AdminController::class, 'addItem']);
+    Route::put('/admin/item/updateItem/{id}', [AdminController::class, 'updateItem']);
+    Route::delete('/admin/item/deleteItem/{id}', [AdminController::class, 'deleteItem']);
 });
 
 require __DIR__ . '/auth.php';

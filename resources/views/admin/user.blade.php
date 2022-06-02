@@ -46,18 +46,6 @@
                                 </td>
                             </tr>
                         @endforeach
-                        {{-- <tr>
-                            <td>1</td>
-                            <td>Nama Karyawan</td>
-                            <td>812873162704912</td>
-                            <td>Kompartemen 1</td>
-                            <td>Departemen 1</td>
-                            <td>Unit Kerja 1</td>
-                            <td>Alamat karyawan</td>
-                            <td>Email karyawan</td>
-                            <td>0816152371263</td>
-                            <td><button class="uk-button uk-button-danger">Hapus</button></td>
-                        </tr> --}}
                     </tbody>
                 </table>
 

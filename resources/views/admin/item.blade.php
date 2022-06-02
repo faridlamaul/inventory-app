@@ -68,18 +68,38 @@
                                         <input class="uk-input" type="text" placeholder="Masukkan hasil scan disini">
                                     </div>
                                 </div>
-                                <div class="uk-margin">
-                                    <button class="uk-button uk-button-primary" type="submit">Submit</button>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                        <div class="uk-grid-collapse uk-child-width-1-2@s
+uk-flex-middle" uk-grid>
+                            <div class="uk-background-cover"
+                                style="background-image: url('https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');"
+                                uk-height-viewport></div>
+
+                            <div class="uk-padding-large">
+                                <h1>Bor Mesin</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laborum.</p>
+                                <div>
+                                    {!! QrCode::size(300)->generate('borrrrrrrrrrrrrrr') !!}
                                 </div>
                             </form> --}}
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
-
     </div>
-</div>
-
-@endsection
+    @endsection

@@ -19,12 +19,14 @@ class AdminController extends Controller
 
     public function item()
     {
-        return view('admin.item');
+        $items = Item::all();
+        return view('admin.item', compact('items'));
     }
 
-    public function item_edit()
+    public function item_edit($id)
     {
-        return view('admin.edit-item');
+        $item = Item::find($id);
+        return view('admin.edit-item', compact('item'));
     }
 
     public function item_add()
@@ -68,7 +70,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,svg', 'max:2048'],
+            'image' => ['image', 'mimes:jpeg,png,jpg,svg', 'max:2048'],
             'description' => 'required',
             'type' => 'required',
             'quantity' => 'required',
@@ -85,7 +87,9 @@ class AdminController extends Controller
             unset($inputItem['image']);
         }
 
-        Item::where('id', $request->id)->update($inputItem);
+        $item = Item::find($request->id);
+
+        $item->update($inputItem);
 
         return redirect('admin/item')->with('success', 'Item updated successfully');
     }

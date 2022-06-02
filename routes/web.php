@@ -30,11 +30,11 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/user', [AdminController::class, 'index']);
     Route::delete('/admin/user/deleteUser/{id}', [AdminController::class, 'deleteUser']);
     Route::get('/admin/item', [AdminController::class, 'item']);
-    Route::get('/admin/item/edit', [AdminController::class, 'item_edit']);
     Route::get('/admin/item/add', [AdminController::class, 'item_add']);
-    Route::post('/admin/item/addItem', [AdminController::class, 'addItem']);
-    Route::put('/admin/item/updateItem/{id}', [AdminController::class, 'updateItem']);
-    Route::delete('/admin/item/deleteItem/{id}', [AdminController::class, 'deleteItem']);
+    Route::post('/admin/item/add', [AdminController::class, 'addItem']);
+    Route::get('/admin/item/edit/{id}', [AdminController::class, 'item_edit']);
+    Route::put('/admin/item/edit/{id}', [AdminController::class, 'updateItem']);
+    Route::delete('/admin/item/delete/{id}', [AdminController::class, 'deleteItem']);
 });
 
 require __DIR__ . '/auth.php';

@@ -22,6 +22,16 @@ class AdminController extends Controller
         return view('admin.item');
     }
 
+    public function item_edit()
+    {
+        return view('admin.edit-item');
+    }
+
+    public function item_add()
+    {
+        return view('admin.add-item');
+    }
+
     public function deleteUser(Request $request)
     {
         $user = User::find($request->id);

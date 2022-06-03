@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/editgui.css'); }} ">
 
 </head>
-<body>
+<body onload="addClass()">
     <x-navbar />
     @yield('content')
     <x-footer />

@@ -26,7 +26,7 @@
                         <div>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top">
-                                    <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" width="1800" height="1200" alt="">
+                                    <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" width="1800" height="1200" alt="" class="imgClass">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Barang #1</h3>
@@ -70,5 +70,20 @@
 
     </div>
 </div>
+
+<script>
+    function addClass() {
+        var someImg = document.getElementsByClassName('imgClass');
+        console.log(someImg.length);
+        for (var i = 0; i < someImg.length; i++) {
+            if (someImg[i].width > someImg[i].height) {
+                someImg[i].classList.add('landscape');
+            } else {
+                someImg[i].classList.add('portrait');
+            }
+        }
+    }
+
+</script>
 
 @endsection

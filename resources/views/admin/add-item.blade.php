@@ -16,7 +16,6 @@
                                 <input name="image" type="file">
                                 <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
                             </div>
-                            {{-- <button class="uk-button uk-button-default">Submit</button> --}}
                         </div>
                     </div>
                     <div class="uk-margin">

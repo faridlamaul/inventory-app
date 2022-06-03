@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->text('description')->nullable();
+            $table->string('qrcode')->nullable();
             $table->string('type');
             $table->integer('quantity')->nullable();
             $table->timestamps();

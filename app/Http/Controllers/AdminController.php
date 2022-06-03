@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class AdminController extends Controller
 {
@@ -61,7 +63,12 @@ class AdminController extends Controller
             $inputItem['image'] = "$profileImage";
         }
 
-        Item::create($inputItem);
+        $item = Item::create($inputItem);
+
+        $encrypt = Crypt::encryptString($item->id . '-' . $item->type . '-' . Carbon::now()->toDateTimeString());
+        $encrypt = substr($encrypt, 8, 8);
+        $item->qrcode = $encrypt;
+        $item->save();
 
         return redirect('admin/item')->with('success', 'Item added successfully');
     }
@@ -90,6 +97,11 @@ class AdminController extends Controller
         $item = Item::find($request->id);
 
         $item->update($inputItem);
+
+        $encrypt = Crypt::encryptString($item->id . '-' . $item->type . '-' . Carbon::now()->toDateTimeString());
+        $encrypt = substr($encrypt, 8, 8);
+        $item->qrcode = $encrypt;
+        $item->save();
 
         return redirect('admin/item')->with('success', 'Item updated successfully');
     }

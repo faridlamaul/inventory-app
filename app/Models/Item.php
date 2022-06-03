@@ -14,6 +14,7 @@ class Item extends Model
         'image',
         'description',
         'type',
+        'qrcode',
         'quantity',
     ];
 

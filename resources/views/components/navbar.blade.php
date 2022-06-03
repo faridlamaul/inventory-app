@@ -62,7 +62,7 @@
             @auth
             <ul class="uk-navbar-nav">
                 <li style="align-self: center" class="me-3">
-                    <p class="text-white m-0">Halo, <span>Name</span></p>
+                    <p class="text-white m-0">Halo, <span>{{ Auth::user()->name }}</span></p>
                 </li>
                 <li class="ms-2" style="align-self: center">
                     <form action="{{ route('logout') }}" method="POST">

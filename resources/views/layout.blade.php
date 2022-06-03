@@ -35,5 +35,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
 
+    <script>
+        function addClass() {
+            var someImg = document.getElementsByClassName('imgClass');
+            console.log(someImg.length);
+            for (var i = 0; i < someImg.length; i++) {
+                if (someImg[i].width > someImg[i].height) {
+                    someImg[i].classList.add('landscape');
+                } else {
+                    someImg[i].classList.add('portrait');
+                }
+            }
+        }
+
+    </script>
+
 </body>
 </html>

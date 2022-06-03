@@ -69,20 +69,4 @@
     </div>
 </div>
 
-<script>
-    function addClass() {
-        var someImg = document.getElementsByClassName('imgClass');
-        console.log(someImg.length);
-        for (var i = 0; i < someImg.length; i++) {
-            if (someImg[i].width > someImg[i].height) {
-                someImg[i].classList.add('landscape');
-            } else {
-                someImg[i].classList.add('portrait');
-            }
-        }
-    }
-
-</script>
-
-
 @endsection

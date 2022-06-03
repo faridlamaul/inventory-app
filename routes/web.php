@@ -22,6 +22,7 @@ Route::get('/', function () {
 // Middleware for role 'user' 
 Route::group(['middleware' => ['role:user']], function () {
     Route::get('/barang', [PeminjamanController::class, 'index']);
+    Route::post('/barang/pinjam/{id}', [PeminjamanController::class, 'qrCheck']);
     Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
 });
 

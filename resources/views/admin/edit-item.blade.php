@@ -16,7 +16,7 @@
                         <label class="uk-form-label" for="form-stacked-text">Ganti Gambar Item</label>
                         <div>
                             <div uk-form-custom="target: true">
-                                <input type="file" name="image">
+                                <input type="file" name="image" value="{{ asset('ItemsImage/' . $item->image) }}">
                                 <input class="uk-input uk-form-width-medium" type="text" placeholder="{{ $item->image }}"
                                     disabled>
                             </div>
@@ -27,21 +27,21 @@
                         <label class="uk-form-label" for="form-stacked-text">Nama Item</label>
                         <div class="uk-form-controls">
                             <input class="uk-input" id="form-stacked-text" name="name" type="text"
-                                placeholder="{{ $item->name }}">
+                                value="{{ $item->name }}">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label class="uk-form-label" for="form-stacked-text">Deskripsi Item</label>
                         <div class="uk-form-controls">
-                            <textarea class="uk-textarea" name="description" rows="5" placeholder="{{ $item->description }}"></textarea>
+                            <textarea class="uk-textarea" name="description" rows="5">{{ $item->description }}</textarea>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label class="uk-form-label" for="form-stacked-text">Tipe Item</label>
                         <div class="uk-form-controls">
                             <select class="uk-select" name="type" id="form-stacked-select">
-                                <option>Barang</option>
-                                <option>Ruangan</option>
+                                <option @if ($item->type == 'Barang') selected @endif> Barang</option>
+                                <option @if ($item->type == 'Ruangan') selected @endif> Ruangan</option>
                             </select>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         <label class="uk-form-label" for="form-stacked-text">Jumlah Item</label>
                         <div class="uk-form-controls">
                             <input class="uk-input" name="quantity" id="form-stacked-text" type="number"
-                                placeholder="{{ $item->quantity }}">
+                                value="{{ $item->quantity }}">
                         </div>
                     </div>
                     <div>

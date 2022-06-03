@@ -67,7 +67,6 @@
                 <li class="ms-2" style="align-self: center">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-
                         <button class="uk-button uk-button-default text-white">Logout</button>
                     </form>
                 </li>

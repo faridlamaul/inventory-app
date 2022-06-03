@@ -58,6 +58,27 @@
                                 <a href="{{ url('/admin/item/edit/' . $item->id) }}">
                                     <button class="uk-button uk-button-primary">Edit Item</button>
                                 </a>
+                                <button type="button" class="uk-button uk-button-danger " uk-toggle="target: #modal-{{ $item->id }}">Hapus</button>
+
+                                <!-- This is the modal -->
+                                <div id="modal-{{ $item->id }}" uk-modal>
+                                    <div class="uk-modal-dialog uk-modal-body">
+                                        <h2 class="uk-modal-title">Hapus item</h2>
+                                        <div class="thumbnail">
+                                            <img src="{{ asset('ItemsImage/' . $item->image) }}" alt="" class="imgClass">
+                                        </div>
+                                        <p>Apakah Anda yakin ingin menghapus item <span>{{ $item->name }} ?</span></p>
+                                        <form action="{{ url('/admin/item/delete', $item->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <p class="uk-text-right">
+                                                <button class="uk-button uk-button-default uk-modal-close" type="button">Tidak</button>
+                                                <button class="uk-button uk-button-danger" type="submit">Ya, saya yakin</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

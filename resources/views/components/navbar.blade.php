@@ -13,29 +13,29 @@
 
                 {{-- Auth with role user --}}
                 @auth
-                    @if (Auth::user()->hasRole('user'))
-                        <li class="ms-3">
-                            <a href="{{ url('/barang') }}">
-                                Ajukan Peminjaman
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('riwayat') }}">
-                                Riwayat peminjaman
-                            </a>
-                        </li>
-                    @else
-                        <li class="ms-3">
-                            <a href="{{ url('/admin/user') }}">
-                                Manage User
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a href="{{ url('/admin/item') }}">
-                                Manage Item
-                            </a>
-                        </li>
-                    @endif
+                @if (Auth::user()->hasRole('user'))
+                <li class="ms-3">
+                    <a href="{{ url('/barang') }}">
+                        Ajukan Peminjaman
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('riwayat') }}">
+                        Riwayat peminjaman
+                    </a>
+                </li>
+                @else
+                <li class="ms-3">
+                    <a href="{{ url('/admin/user') }}">
+                        Manage User
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a href="{{ url('/admin/item') }}">
+                        Manage Item
+                    </a>
+                </li>
+                @endif
                 @endauth
             </ul>
 
@@ -44,30 +44,33 @@
 
             {{-- guest user --}}
             @guest
-                <ul class="uk-navbar-nav">
-                    <li class="mx-2" style="align-self: center">
-                        <a href="{{ url('login') }}">
-                            <button class="uk-button uk-button-secondary bg-white text-dark">Login</button>
-                        </a>
-                    </li>
-                    <li class="ms-2" style="align-self: center">
-                        <a href="{{ url('register') }}">
-                            <button class="uk-button uk-button-default text-white">Register</button>
-                        </a>
-                    </li>
-                </ul>
+            <ul class="uk-navbar-nav">
+                <li class="mx-2" style="align-self: center">
+                    <a href="{{ url('login') }}">
+                        <button class="uk-button uk-button-secondary bg-white text-dark">Login</button>
+                    </a>
+                </li>
+                <li class="ms-2" style="align-self: center">
+                    <a href="{{ url('register') }}">
+                        <button class="uk-button uk-button-default text-white">Register</button>
+                    </a>
+                </li>
+            </ul>
             @endguest
 
             {{-- auth user --}}
             @auth
-                <ul class="uk-navbar-nav">
-                    <li class="ms-2" style="align-self: center">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button class="uk-button uk-button-default text-white">Logout</button>
-                        </form>
-                    </li>
-                </ul>
+            <ul class="uk-navbar-nav">
+                <li style="align-self: center" class="me-3">
+                    <p class="text-white m-0">Halo, <span>Name</span></p>
+                </li>
+                <li class="ms-2" style="align-self: center">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="uk-button uk-button-default text-white">Logout</button>
+                    </form>
+                </li>
+            </ul>
             @endauth
         </div>
     </nav>

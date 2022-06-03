@@ -55,10 +55,10 @@
                         <select id="kompartemen" name="kompartemen"
                             class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected>Select one option</option>
+                            <option>Kompartemen A</option>
+                            <option>Kompartemen B</option>
+                            <option>Kompartemen C</option>
                         </select>
                     </div>
 
@@ -68,10 +68,10 @@
                         <select id="departemen" name="departemen"
                             class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected>Select one option</option>
+                            <option>Departemen A</option>
+                            <option>Departemen B</option>
+                            <option>Departemen C</option>
                         </select>
                     </div>
 
@@ -81,10 +81,22 @@
                         <select id="unit_kerja" name="unit_kerja"
                             class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected>Select one option</option>
+                            <option>Unit Kerja A</option>
+                            <option>Unit Kerja B</option>
+                            <option>Unit Kerja C</option>
+                        </select>
+                    </div>
+
+                    {{-- Tipe Akun --}}
+                    <div class="mt-4">
+                        <x-label for="TipeAkun" :value="__('Tipe User')" class="mb-1" />
+                        <select id="unit_kerja" name="type"
+                            class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            aria-label="Default select example">
+                            <option selected>Select one option</option>
+                            <option>Organik</option>
+                            <option>Non-Organik</option>
                         </select>
                     </div>
 

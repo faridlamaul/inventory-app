@@ -44,6 +44,7 @@ class RegisteredUserController extends Controller
             'kompartemen' => ['required', 'string', 'max:255'],
             'departemen' => ['required', 'string', 'max:255'],
             'unit_kerja' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::create([
@@ -56,6 +57,7 @@ class RegisteredUserController extends Controller
             'kompartemen' => $request->kompartemen,
             'departemen' => $request->departemen,
             'unit_kerja' => $request->unit_kerja,
+            'type' => $request->type,
         ]);
 
         $role = Role::findByName('user');

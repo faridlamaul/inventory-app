@@ -19,16 +19,12 @@ class PeminjamanController extends Controller
         return view('peminjaman.barang', compact('items'));
     }
 
-    public function qrCheck(Request $request)
+    public function pinjam(Request $request)
     {
         $item = Item::find($request->id);
         $qrcode = $item->qrcode;
         if ($qrcode == $request->qrcode) {
-            if ($item->type == 'Barang') {
-                $status = "Peminjaman";
-            } else {
-                $status = "Penyewaan";
-            }
+            $status = "Peminjaman";
             Transaksi::create([
                 'user_id' => auth()->user()->id,
                 'item_id' => $item->id,
@@ -38,7 +34,6 @@ class PeminjamanController extends Controller
             ]);
             $encrypt = Crypt::encryptString($item->id . '-' . $item->type . '-' . Carbon::now()->toDateTimeString());
             $encrypt = substr($encrypt, 8, 8);
-            // $item->qrcode = $encrypt;
 
             $item->update([
                 'quantity' => $item->quantity - 1,
@@ -50,10 +45,42 @@ class PeminjamanController extends Controller
         }
     }
 
+    public function sewa(Request $request)
+    {
+        $item = Item::find($request->id);
+        $qrcode = $item->qrcode;
+        if ($qrcode == $request->qrcode) {
+            $status = "Penyewaan";
+            Transaksi::create([
+                'user_id' => auth()->user()->id,
+                'item_id' => $item->id,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'type' => $status,
+            ]);
+            $encrypt = Crypt::encryptString($item->id . '-' . $item->type . '-' . Carbon::now()->toDateTimeString());
+            $encrypt = substr($encrypt, 8, 8);
+
+            $item->update([
+                'qrcode' => $encrypt,
+            ]);
+
+            // dd(Carbon::parse($request->start_date)->diffInDays(Carbon::parse($request->end_date)));
+
+            if (Carbon::parse($request->start_date)->greaterThanOrEqualTo(Carbon::now()->format('Y-m-d'))) {
+                $item->update([
+                    'quantity' => $item->quantity - 1,
+                ]);
+            }
+            return redirect('/riwayat')->with('success', 'Penyewaan ruangan berhasil');
+        } else {
+            return redirect('/barang')->with('error', 'QR Code is not valid');
+        }
+    }
+
     public function kembalikan(Request $request)
     {
         $transaksi = Transaksi::find($request->id);
-        // dd($request->id);
         $item = Item::find($transaksi->item_id);
         $transaksi->update([
             'end_date' => Carbon::now(),
@@ -72,6 +99,19 @@ class PeminjamanController extends Controller
             ->select('transaksis.*', 'items.name', 'items.image', 'items.description', 'items.type')
             ->orderBy('transaksis.created_at', 'desc')
             ->get();
+
+        $items = Item::join('transaksis', 'items.id', '=', 'transaksis.item_id')
+            ->where('transaksis.user_id', auth()->user()->id)
+            ->select('items.*', 'transaksis.start_date', 'transaksis.end_date')
+            ->get();
+
+        foreach ($items as $item) {
+            if (Carbon::parse(now())->diffInDays(Carbon::parse($item->end_date)) == -1) {
+                $item->update([
+                    'quantity' => $item->quantity + 1,
+                ]);
+            }
+        }
 
         return view('peminjaman.riwayat', compact('transaksis'));
     }

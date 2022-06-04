@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div id="wrapper" class="bg-secondary" style="height: 200vh" onload="addClass();">
+    <div id="wrapper" class="bg-secondary pb-5" style="min-height: 100vh" onload="addClass();">
         <div class="container-fluid pt-4 px-4">
             <div class="mb-5 bg-dark px-4 py-3 rounded d-flex flex-row">
                 <div class="">

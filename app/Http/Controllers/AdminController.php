@@ -7,6 +7,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -112,5 +113,17 @@ class AdminController extends Controller
         $user->delete();
 
         return redirect('admin/item')->with('success', 'Item deleted successfully');
+    }
+
+    public function riwayat()
+    {
+        $transaksis = DB::table('transaksis')
+            ->join('items', 'transaksis.item_id', '=', 'items.id')
+            ->join('users', 'transaksis.user_id', '=', 'users.id')
+            ->select('transaksis.*', 'items.name as item_name', 'users.name as user_name', 'users.telepon as user_phone')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('admin.riwayat', compact('transaksis'));
     }
 }

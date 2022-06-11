@@ -38,6 +38,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/item/edit/{id}', [AdminController::class, 'item_edit']);
     Route::put('/admin/item/edit/{id}', [AdminController::class, 'updateItem']);
     Route::delete('/admin/item/delete/{id}', [AdminController::class, 'deleteItem']);
+    Route::get('/admin/riwayat', [AdminController::class, 'riwayat']);
 });
 
 require __DIR__ . '/auth.php';

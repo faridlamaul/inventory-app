@@ -18,7 +18,7 @@
                         <th class="uk-width-small">No. HP Peminjam</th>
                         <th class="uk-width-small">Waktu peminjaman/penyewaan</th>
                         <th class="uk-width-small">Waktu pengembalian</th>
-                        <th class="uk-width-small">Kesa / Pesan</th>
+                        <th class="uk-width-small">Kesan / Pesan</th>
                     </tr>
                 </thead>
                 <tbody>

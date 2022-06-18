@@ -18,6 +18,7 @@
                         <th class="uk-width-small">No. HP Peminjam</th>
                         <th class="uk-width-small">Waktu peminjaman/penyewaan</th>
                         <th class="uk-width-small">Waktu pengembalian</th>
+                        <th class="uk-width-small">Kesa / Pesan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,23 @@
                             <p class="text-danger">Belum dikembalikan</p>
                             @else
                             {{ $item->end_date }}
+                            @endif
+                        </td>
+                        <td>
+                            @if ($item->end_date == null)
+                            <p class="text-danger">Belum dikembalikan</p>
+                            @else
+                            <button class="uk-button uk-button-primary" uk-toggle="target: #modal-{{ $item->id }}">Lihat Kesan/Pesan</button>
+                            <!-- This is the modal -->
+                            <div id="modal-{{ $item->id }}" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Kesan / Pesan Peminjam</h2>
+                                    <p>
+                                        Pastikan Anda benar-benar sudah mengembalikan
+                                    </p>
+                                </div>
+                            </div>
+
                             @endif
                         </td>
                     </tr>

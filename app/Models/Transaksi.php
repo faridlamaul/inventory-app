@@ -15,5 +15,6 @@ class Transaksi extends Model
         'start_date',
         'end_date',
         'type',
+        'kesan',
     ];
 }

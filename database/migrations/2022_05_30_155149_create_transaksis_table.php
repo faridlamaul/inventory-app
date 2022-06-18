@@ -20,6 +20,7 @@ return new class extends Migration
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
             $table->string('type')->nullable();
+            $table->string('kesan')->nullable();
             $table->timestamps();
         });
     }

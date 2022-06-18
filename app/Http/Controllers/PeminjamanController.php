@@ -63,6 +63,7 @@ class PeminjamanController extends Controller
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
                 'type' => $status,
+                'kesan' => $request->kesan,
             ]);
             $encrypt = Crypt::encryptString($item->id . '-' . $item->type . '-' . Carbon::now()->toDateTimeString());
             $encrypt = substr($encrypt, 8, 8);
@@ -90,6 +91,7 @@ class PeminjamanController extends Controller
         $item = Item::find($transaksi->item_id);
         $transaksi->update([
             'end_date' => Carbon::now(),
+            'kesan' => $request->kesan,
         ]);
         $item->update([
             'quantity' => $item->quantity + 1,

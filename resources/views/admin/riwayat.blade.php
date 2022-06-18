@@ -45,7 +45,7 @@
                                 <div class="uk-modal-dialog uk-modal-body">
                                     <h2 class="uk-modal-title">Kesan / Pesan Peminjam</h2>
                                     <p>
-                                        Pastikan Anda benar-benar sudah mengembalikan
+                                        {{ $item->kesan }}
                                     </p>
                                 </div>
                             </div>

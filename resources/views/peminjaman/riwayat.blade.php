@@ -126,7 +126,7 @@ uk-flex-middle" uk-grid>
                                             @csrf
                                             <div class="form-group">
                                                 <label for="">Kesan/Pesan</label>
-                                                <textarea class="form-control" name="alasan" id="" cols="30" rows="5"></textarea>
+                                                <textarea class="form-control" name="kesan" id="" cols="30" rows="5"></textarea>
                                             </div>
                                             <p class="uk-text-right">
                                                 <button class="uk-button uk-button-default uk-modal-close" type="button">Tidak</button>

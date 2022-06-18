@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Transaksi;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -122,5 +123,21 @@ class PeminjamanController extends Controller
         }
 
         return view('peminjaman.riwayat', compact('transaksis'));
+    }
+
+    public function editProfile(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->update([
+            'name' => $request->name,
+            'nik' => $request->nik,
+            'email' => $request->email,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat,
+            'kompartemen' => $request->kompartemen,
+            'departemen' => $request->departemen,
+            'unit_kerja' => $request->unit_kerja,
+        ]);
+        return redirect('/barang')->with('success', 'Profil berhasil diubah');
     }
 }

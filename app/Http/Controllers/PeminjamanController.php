@@ -19,6 +19,12 @@ class PeminjamanController extends Controller
         return view('peminjaman.barang', compact('items'));
     }
 
+    public function edit_profil()
+    {
+        $user = auth()->user();
+        return view('edit_profil', compact('user'));
+    }
+
     public function pinjam(Request $request)
     {
         $item = Item::find($request->id);

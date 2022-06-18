@@ -26,6 +26,7 @@ Route::group(['middleware' => ['role:user']], function () {
     Route::post('/barang/sewa/{id}', [PeminjamanController::class, 'sewa']);
     Route::get('/riwayat', [PeminjamanController::class, 'riwayat']);
     Route::post('/riwayat/kembalikan/{id}', [PeminjamanController::class, 'kembalikan']);
+    Route::get('/edit-profil', [PeminjamanController::class, 'edit_profil']);
 });
 
 // Middleware for role 'admin' 

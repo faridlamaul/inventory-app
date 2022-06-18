@@ -24,6 +24,11 @@
                         Riwayat peminjaman
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('edit-profil') }}">
+                        Profil
+                    </a>
+                </li>
                 @else
                 <li class="ms-3">
                     <a href="{{ url('/admin/user') }}">
